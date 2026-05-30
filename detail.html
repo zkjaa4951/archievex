@@ -46,11 +46,6 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
-                <input type="text" id="search-input" placeholder="Cari bookmark..."
-                    class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
-                <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
-            </div>
             <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
 
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
@@ -129,7 +124,6 @@
                             <template x-for="author in detail.authors" :key="author">
                                 <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]" x-text="author"></span>
                             </template>
-                            <!-- <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]">Sing N Song</span> -->
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -206,7 +200,6 @@
     </footer>
 
     <script type="text/javascript" src="assets/js/detail_page.js"></script>
-    </script>
 
 </body>
 

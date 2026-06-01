@@ -61,7 +61,7 @@
 
                 <div id="bookmark-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full">
                     <!-- Bookmark cards akan dirender di sini -->
-                     <template x-for="comic in bookmarks" :key="comic.id">
+                     <template x-for="(comic,i) in bookmarks" :key="i">
                         <div x-show="searchQuery === '' || comic.title.toLowerCase().includes(searchQuery.toLowerCase())" class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 hover:-translate-y-1 shadow-md group">
                             <a :href="comic.link">
                                 <img :src="comic.image" class="w-full aspect-[3/4] object-cover block group-hover:brightness-110 transition">
@@ -70,7 +70,7 @@
                                     <p class="text-[#FFD700]/70 text-[9px] md:text-xs italic truncate" x-text="comic.subtitle"></p>
                                 </div>
                             </a>
-                            <button @click="removeBookmark(comic.id)" 
+                            <button @click="removeBookmark(i)" 
                                 class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white text-[8px] md:text-[10px] font-bold px-2 py-1 rounded shadow-lg z-10 transition">
                                 HAPUS
                             </button>

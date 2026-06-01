@@ -1,0 +1,349 @@
+/* 1. RESET & BASE STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #A29CB3; 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+:root {
+    --color-bg-primary: #A29CB3;
+    --color-bg-cream: #FFF8EE; 
+    --color-text-dark: #333333;
+    --color-btn-purple: #786C96;
+}
+
+/* 2. NAVBAR */
+
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background-color: var(--color-bg-cream);
+    padding: 0 5%; 
+    height: 80px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.header-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.logo-icon {
+    height: 80px !important; 
+    width: auto !important;
+    display: block !important;
+    object-fit: contain;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all 0.4s ease !important;
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 5px;
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--color-text-dark); 
+    font-size: 14px; 
+    font-weight: 600;
+    padding: 8px 10px; 
+}
+
+.nav-icons { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.search-container { 
+    display: flex; 
+    align-items: center; 
+    background: #ffffff; 
+    padding: 6px 12px; 
+    border-radius: 25px; 
+    position: relative;
+}
+
+.search-input { 
+    border: none; 
+    outline: none; 
+    font-size: 12px; 
+    width: 120px; 
+    background: transparent;
+}
+
+.icon-small { 
+    height: 20px; 
+    width: 20px;
+    cursor: pointer; 
+    opacity: 0.7;
+}
+
+.divider { 
+    width: 1px; 
+    height: 20px; 
+    background: #ddd; 
+}
+
+/* 3. HERO SECTION & SLIDER */
+
+.hero-wrapper {
+    width: 100%;
+    height: 350px !important; 
+    position: relative;
+    overflow: hidden;
+    margin-top: 64px; 
+}
+
+#banner-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 30px;
+    left: 5% !important;
+    z-index: 5;
+    color: white;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.hero-text h1 {
+    font-size: 1.8rem; 
+    line-height: 1.2;
+    text-shadow: none !important;
+}
+
+.hero-text p {
+    font-size: 14px;
+    max-width: 350px;
+    text-shadow: none !important;
+    margin-bottom: 15px;
+}
+
+.btn-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-slider:hover {
+    background: rgba(255,255,255,0.8);
+    color: black;
+}
+
+.prev { left: 0; border-radius: 0 5px 5px 0; }
+.next { right: 0; border-radius: 5px 0 0 5px; }
+
+/* 5. COMIC GRID & CARDS */
+
+.comic-container {
+    width: 100%;
+    padding: 50px 20px;
+}
+
+.comic-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important; 
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.card {
+    background: var(--color-bg-cream);
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flag {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 22px;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+.card-info {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.card-info h2 {
+    font-size: 14px;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+    height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.btn-chapter {
+    background: var(--color-btn-purple);
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* 6. FOOTER */
+
+.footer {
+    background: var(--color-bg-cream);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid #ddd;
+}
+
+/* 7. RESPONSIVE QUERIES */
+
+@media (max-width: 1024px) {
+    .comic-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .comic-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        width: 100% !important;
+        gap: 15px !important;
+        padding: 10px !important;
+    }
+
+    .btn-chapter {
+        font-size: 10px !important; 
+        padding: 5px 8px !important;  
+    }
+
+    .card-info h2 {
+        font-size: 11px !important;
+        height: 32px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .navbar { padding: 10px 15px; height: 70px; }
+    .nav-links { display: none; }
+    .hero-wrapper { height: 250px !important; }
+    
+    .hero-text {
+        left: 10% !important;
+        bottom: 20px !important;
+    }
+
+    .hero-text h1 {
+        font-size: 1.2rem !important;
+        text-shadow: none !important; 
+    }
+
+    .hero-text p {
+        display: block !important; 
+        font-size: 10px !important;
+        max-width: 200px !important;
+        margin-bottom: 5px !important;
+        text-shadow: none !important; 
+    }
+}
+
+@media (max-width: 480px) {
+    .comic-grid {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 10px !important;
+    }
+    
+    .btn-chapter {
+        font-size: 5px !important;
+        padding: 4px 6px !important;
+    }
+
+    .card-info h2 {
+        font-size: 10px !important;
+    }
+    
+    .hero-text h1 { font-size: 1rem !important; }
+    .hero-text p { font-size: 9px !important; }
+}

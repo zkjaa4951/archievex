@@ -61,7 +61,11 @@
 
                 <div id="bookmark-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full">
                     <!-- Bookmark cards akan dirender di sini -->
+<<<<<<< HEAD
                      <template x-for="(comic, i) in bookmarks" :key="i">
+=======
+                     <template x-for="(comic,i) in bookmarks" :key="i">
+>>>>>>> 16427aee38909425165471fc129e227cf7417475
                         <div x-show="searchQuery === '' || comic.title.toLowerCase().includes(searchQuery.toLowerCase())" class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 hover:-translate-y-1 shadow-md group">
                             <a :href="comic.link">
                                 <img :src="comic.image" class="w-full aspect-[3/4] object-cover block group-hover:brightness-110 transition">
